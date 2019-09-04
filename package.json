@@ -4,9 +4,10 @@
   "description": "## Instructions",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon index.js",
+    "dev": "npm run migrate:dev && npm run server:dev",
     "lint": "./node_modules/.bin/eslint --format codeframe .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "migrate:dev": "./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
+    "server:dev": "./node_modules/.bin/nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "mysql2": "^1.7.0",
-    "sequelize": "^5.18.1"
+    "sequelize": "^5.18.1",
+    "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
     "eslint": "^6.3.0",
