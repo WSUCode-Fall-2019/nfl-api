@@ -1,5 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+
+// todo: create the teams.js
+const TeamsModel = require('./models/teams')
+
+// goal is to remove this:
 const teams = require('./teams.json')
 
 const app = express()
